@@ -6,5 +6,5 @@ require("classes/Bootstrap.php");
 
 //Create an instance of the Bootstrap class.
 $bootstrap = new Bootstrap($_GET);
-
+$controller = $bootstrap->createController();
 ?>
