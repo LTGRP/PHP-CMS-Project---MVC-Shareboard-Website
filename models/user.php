@@ -5,20 +5,35 @@ class UserModel extends Model{
 		//sanitize POST
 		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
+
 		//encrypting password by hashing it.
 		$password = password_hash($post["password"], PASSWORD_DEFAULT);
+
 
 		//check for submition
 		if($post["submit"]){
 
+			//Checks if all fields in the form were filled.
+			//if something is empty, the form won't submit.
+			if( empty($post["name"]) || 
+				empty($post["email"])|| 
+				empty($post["password"])){
+
+				//defines the message of 'error' type.
+				Messages::setMsg("Please fill all the fields in the form.", "error");
+
+				return;
+			}//ends checking for form fields.
+
+			//variable to hold the email input.
 			$checking_email = $this->check_email_at_database($post["email"]);
 
 			//checks if the email input already exists at database.
 			//if it doesn't exist the new user will be created.
 			if($checking_email){
 
-				echo "We can't register. Email already taken.";
-				echo print_r($checking_email);
+				//defines the message of 'error' type.
+				Messages::setMsg("We can't register. Email already taken.", "error");
 
 			} else {
 				// Insert into database. 
@@ -26,6 +41,8 @@ class UserModel extends Model{
 					VALUES (:name, :email, :password)");
 
 				// Doing the data binding.
+				// Observation: the hashed password is used
+				// and NOT the password that was input.
 				$this->bind("name", $post["name"]);
 				$this->bind("email", $post["email"]);
 				$this->bind("password", $password);
@@ -35,6 +52,7 @@ class UserModel extends Model{
 				if($this->lastInsertId()){
 					// redirect
 					header("Location: ".ROOT_URL."users/login");
+
 				}
 			}//ends checking email at database.
 		}//ends checking for submition
@@ -46,10 +64,18 @@ class UserModel extends Model{
 		//sanitize POST
 		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
-		$password = $post["password"];
-
 		//check for submition
 		if($post["submit"]){
+
+			//Checks if all fields in the form were filled.
+			//if something is empty, the form won't submit.
+			if(empty($post["email"]) || empty($post["password"])){
+
+				//defines the message of 'error' type.
+				Messages::setMsg("Please fill all the fields in the form.", "error");
+
+				return;
+			}//ends checking for form fields.
 
 			//checks email at database
 			//it will be null, or it'll have an array with 
@@ -75,10 +101,14 @@ class UserModel extends Model{
 					header('Location: '.ROOT_URL.'posts');	
 
 				} else {
-					echo "Wrong password";
+
+					//defines the message of 'error' type.
+					Messages::setMsg("The password is incorrect", "error");
 				}
 			} else {
-				echo "User not found";
+
+				//defines the message of 'error' type.
+				Messages::setMsg("User does not exist in the database", "error");
 			}
 		}
 		return;
