@@ -52,8 +52,8 @@ class UserModel extends Model{
 		if($post["submit"]){
 
 			//checks email at database
-			//it will be null, or it'll have the hashed password
-			//associated with the email input.
+			//it will be null, or it'll have an array with 
+			//user data.
 			$row = $this->check_email_at_database($post["email"]);
 
 			//verifies if an user was found at database
@@ -61,11 +61,22 @@ class UserModel extends Model{
 			if($row){
 				// Verifies that the password input
 				// matches the hash in the database.
-				if(password_verify($post["password"], $row)){
-					echo "Logged In";
+				if(password_verify($post["password"], $row["password"])){
+
+					//Create Session variables.
+					$_SESSION["is_logged_in"] = true;
+					$_SESSION["user_data"] = array (
+						"id" 	=> $row["id"],
+						"name" 	=> $row["name"],
+						"email" => $row["email"]
+					);
+
+					//Redirect web browser.
+					header('Location: '.ROOT_URL.'posts');	
+
 				} else {
 					echo "Wrong password";
-				}	
+				}
 			} else {
 				echo "User not found";
 			}
@@ -74,8 +85,7 @@ class UserModel extends Model{
 	}
 
 	//checks if the email input already exists at database.
-	//returns null or the hashed password associated with
-	//with the email input.
+	//returns null or an array with user data.
 	private function check_email_at_database($email){
 		// Compare credentials. 
 		$this->query("SELECT * FROM users 
@@ -86,7 +96,7 @@ class UserModel extends Model{
 		
 		$result = $this->single();
 
-		return $result["password"];
+		return $result;
 	}
 } 
 ?>

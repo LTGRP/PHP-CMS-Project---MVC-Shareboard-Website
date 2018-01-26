@@ -10,5 +10,17 @@ class Users extends Controller{
 		$viewmodel = new UserModel();
 		$this->returnView($viewmodel->login(), true);
 	}
+
+	protected function logout(){
+		//Destroy the specified variables.
+		unset($_SESSION["is_logged_in"]);
+		unset($_SESSION["user_data"]);
+
+		//Destroys all data registered to the session.
+		session_destroy();
+
+		//Redirect the web browser.
+		header("Location: ".ROOT_URL);
+	}
 } 
 ?>

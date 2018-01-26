@@ -1,4 +1,7 @@
 <?php
+//Start Session
+session_start();
+
 //Include necessary php files.
 require("config.php");
 
