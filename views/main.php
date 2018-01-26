@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Blog Site</title>
+		<title>Shareboard</title>
 
 		<!-- Bootstrap core CSS -->
-		<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo ROOT_URL; ?>assets/css/bootstrap.css">
 
 		<!-- Custom style for this template -->
-		<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo ROOT_URL; ?>assets/css/style.css">
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">

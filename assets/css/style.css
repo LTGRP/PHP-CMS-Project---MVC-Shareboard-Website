@@ -1,4 +1,5 @@
 #intro{
+	margin-top: 5%;
 	margin-left: 14%;
 	margin-right: 14%;
 }
@@ -11,3 +12,15 @@
 	padding: 2%;
 }
 
+#add_form{
+	width: 100%;
+}
+
+#panel_title {
+	text-decoration: underline;
+	text-decoration-color: #5BAEE1;
+}
+
+label{
+	font-weight: bold;
+}
