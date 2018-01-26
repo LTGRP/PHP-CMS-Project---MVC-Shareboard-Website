@@ -12,7 +12,7 @@
 	<body>
 		<nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
 			<div class="container">
-		        <a class="navbar-brand" href="<?php echo ROOT_URL; ?>">MVC Blog</a>
+		        <a class="navbar-brand" href="<?php echo ROOT_URL; ?>">MVC Shareboard</a>
 		        <button class="navbar-toggler" type="button" data-toggle="collapse" 
 		        data-target="#navbar" aria-controls="navbar" aria-expanded="false" 
 		        aria-label="Toggle navigation">

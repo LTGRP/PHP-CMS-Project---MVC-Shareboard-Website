@@ -9,7 +9,7 @@
 			<p><?php echo $item['body']; ?></p>
 			<br />
 			<a class="btn bg-light border rounded text-success" 
-			href="<?php echo $item['link']; ?>" target="_blank">Read the post</a>
+			href="<?php echo $item['link']; ?>" target="_blank">Read the article</a>
 		</div>
 	<?php endforeach; ?>
 </div>
