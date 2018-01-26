@@ -26,7 +26,7 @@ class PostModel extends Model{
 			//Verify
 			if($this->lastInsertId()){
 				// redirect
-				header("Location: {$ROOT_URL}posts");
+				header("Location: ".ROOT_URL."posts");
 			}
 		}
 		return;
