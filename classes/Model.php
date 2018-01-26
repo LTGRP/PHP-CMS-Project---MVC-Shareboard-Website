@@ -1,4 +1,5 @@
 <?php
+//Model class - base model to create other models.
 abstract class Model {
 	//Class variables.
 	protected $dbh; //database handler
