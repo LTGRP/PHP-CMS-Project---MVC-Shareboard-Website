@@ -11,11 +11,13 @@
     	</div>
     	<div class="form-group">
     		<label>Email</label>
-    		<input type="text" name="email" class="form-control"></textarea>
+    		<input type="text" name="email" class="form-control"
+            autocomplete="new-password"></input>
     	</div>
     	<div class="form-group">
     		<label>Password</label>
-    		<input type="password" name="password" class="form-control">
+    		<input type="password" name="password" class="form-control" 
+            autocomplete="new-password">
     	</div>
     	<input type="submit" name="submit" class="btn btn-primary" value="Submit">
     </form>

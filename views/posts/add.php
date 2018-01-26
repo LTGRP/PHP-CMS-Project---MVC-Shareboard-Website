@@ -7,7 +7,7 @@
     <form method="post" action="<?php  htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
     	<div class="form-group">
     		<label>Share Title</label>
-    		<input type="text" name="title" class="form-control">
+    		<input type="text" name="title" class="form-control" >
     	</div>
     	<div class="form-group">
     		<label>Description</label>
