@@ -12,10 +12,6 @@
 	padding: 2%;
 }
 
-#add_form{
-	width: 100%;
-}
-
 #panel_title {
 	text-decoration: underline;
 	text-decoration-color: #5BAEE1;
@@ -24,3 +20,9 @@
 label{
 	font-weight: bold;
 }
+
+#input_form, #custom_message{
+	width: 50%;
+	margin-top: 5%;
+	margin-left: 25%;
+	margin-right: 25%;

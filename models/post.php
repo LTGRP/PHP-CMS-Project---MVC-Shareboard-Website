@@ -8,6 +8,7 @@ class PostModel extends Model{
 		return $rows;
 	}
 
+	//function to add a new Share at Database.
 	public function add(){
 		//sanitize POST
 		$post = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);

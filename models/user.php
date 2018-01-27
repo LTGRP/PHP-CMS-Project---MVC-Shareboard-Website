@@ -1,5 +1,6 @@
 <?php
 class UserModel extends Model{
+	
 	//function to register a new user at database.
 	public function register(){
 		//sanitize POST

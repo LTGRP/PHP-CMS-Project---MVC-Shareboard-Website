@@ -1,4 +1,4 @@
-<div id="add_form" class="panel panel-default">
+<div id="input_form" class="panel panel-default">
 
     <div id="panel_title" class="panel-heading">
         <h3 class="panel-title">New Share</h3>

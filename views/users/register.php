@@ -1,7 +1,9 @@
-<div id="add_form" class="panel panel-default">
+<div id="input_form" class="panel panel-default">
+
   <div id="panel_title" class="panel-heading">
     <h3 class="panel-title">Create User</h3>
-  </div>
+  </div><!-- ends panel-heading -->
+  
   <div class="panel-body">
     <!-- obs: $_SERVER["PHP_SELF"] makes the method submit to same page. -->
     <form method="post" action="<?php  htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -21,5 +23,5 @@
     	</div>
     	<input type="submit" name="submit" class="btn btn-primary" value="Submit">
     </form>
-  </div>
+  </div><!-- ends panel-body -->
 </div>
