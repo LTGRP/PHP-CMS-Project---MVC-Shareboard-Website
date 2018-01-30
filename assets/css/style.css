@@ -1,15 +1,19 @@
 #intro{
-	margin-top: 5%;
-	margin-left: 14%;
-	margin-right: 14%;
+	width: 85%;
+	margin-left: 15%;
+	margin-right: 15%;
 }
 
 .row, .well {
-	margin-top: 2%;
+	margin-top: 3%;
 }
 
 #share {
 	padding: 2%;
+}
+
+#share_button{
+	width: 150px;
 }
 
 #panel_title {
@@ -23,6 +27,6 @@ label{
 
 #input_form, #custom_message{
 	width: 50%;
-	margin-top: 5%;
 	margin-left: 25%;
 	margin-right: 25%;
+}
